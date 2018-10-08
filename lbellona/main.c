@@ -14,14 +14,15 @@
 
 int		main()
 {
-    //int  Height = 3;
+    int  Height = 3;
     int  Width = 3;
     
     int map [] = {-1,     -1,      -1,
                  -1,     -1,      -1,
                  -1,      0,      -1};
 
-    printf("%d ", find_nmin(map, Width));
-    //fill_map(map, Width, Height);
+    //find_nmin(map+1, Width));
+    fill_map(map, Width, Height);
+    print_map(map, Width, Height);
 	return (0);
 }
