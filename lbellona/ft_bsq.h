@@ -18,7 +18,7 @@
 # include <stdio.h> //DELETE!!!
 
 void            ft_putchar(char c);
-void			fill_map(int *map, int nWidth, int nHeight);
+int			fill_map(int *map, int nWidth, int nHeight, int *pos);
 int				find_nmin(int *map, int nWidth);
 void            print_map(int *map, int nWidth, int nHeight);
 
