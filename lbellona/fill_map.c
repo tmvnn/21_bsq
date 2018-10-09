@@ -6,7 +6,7 @@
 /*   By: lbellona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 19:00:58 by lbellona          #+#    #+#             */
-/*   Updated: 2018/10/09 19:21:48 by lbellona         ###   ########.fr       */
+/*   Updated: 2018/10/09 20:28:55 by lbellona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	print_solv(int *map, t_mp *params)//int nWidth, int nHeight, int pos, int s
 		while (++x < params->nWidth)
 		{
 			if (*(map + y * params->nWidth + x) == 0)
-				ft_putchar('o');
+				ft_putchar(params->obs);
 			else if ((x >= minx && x <= maxx) && (y >= miny && y <= maxy))
-				ft_putchar('x');
+				ft_putchar(params->full);
 			else 
-				ft_putchar('.');
+				ft_putchar(params->emp);
 		}
 		ft_putchar('\n');
 	}
@@ -73,17 +73,15 @@ void	fill_map(int *map, t_mp *params)//int nWidth, int nHeight, int *pos)
 {
 	int		y;
 	int		x;
-	//int		maxv; //макс размер
 	int		dxy; //сдвиг массива
 
-	//maxv = 0; //проверить на ограничение
 	y = -1;
 	while (++y < params->nHeight)
 	{
 		x = -1;
 		while (++x < params->nWidth)
 		{
-			dxy = y * params->nWidth + x;
+			dxy = y * params->nWidth + x; //возможно заменить на указатель
 			if (*(map + dxy))
 			{
 				if (y == 0 || x == 0 )
