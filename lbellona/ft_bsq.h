@@ -17,9 +17,21 @@
 # include <unistd.h>
 # include <stdio.h> //DELETE!!!
 
+typedef    struct    s_mp
+{
+    int         nWidth;
+    int         nHeight;
+    char        emp;
+    char        obs;
+    char        full;
+    int         pos;
+    int         size;
+}                t_mp;
+
 void            ft_putchar(char c);
-int			fill_map(int *map, int nWidth, int nHeight, int *pos);
+void			fill_map(int *map, t_mp *params);// int nHeight, int *pos);
 int				find_nmin(int *map, int nWidth);
-void            print_map(int *map, int nWidth, int nHeight);
+void            print_map(int *map, t_mp *params);
+void            print_solv(int *map, t_mp *params); //int nWidth, int nHeight, int pos, int size);
 
 #endif

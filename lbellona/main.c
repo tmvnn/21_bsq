@@ -15,9 +15,10 @@
 int		main()
 {
     
-    int  pos = 0;
+    
     
     /*
+    int  pos = 0;
     int  Height = 3;
     int  Width = 3;
     int map [] = {-1,     -1,      -1,
@@ -25,10 +26,19 @@ int		main()
                  -1,      0,      -1};
      */
     
+    t_mp params;
+    params.nHeight = 9;
+    params.nWidth = 27;
+    params.pos = 0;
+    params.emp = '.';
+    params.obs = 'o';
+    params.full = 'x';
+    params.size = 0;
     
-     int  Height = 9;
-     int  Width = 27;
-     
+    
+    //int  Height = 9;
+    //int  Width = 27;
+    //int  pos = 0;
      int map [] = {  -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                     -1, -1, -1, -1,  0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,  0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -41,9 +51,10 @@ int		main()
     };
     
     
-    int t = fill_map(map, Width, Height, &pos);
-    print_map(map, Width, Height);
-    printf("x = %d y = %d s = %d", pos % Width, pos / Width, t);
+    fill_map(map, &params);//Width, Height, &pos);
+    print_map(map, &params);
+    printf("x = %d y = %d s = %d\n", params.pos % params.nWidth, params.pos / params.nWidth, params.size);
+    print_solv(map, &params);// Width, Height, pos, t);
     
 	return (0);
 }
