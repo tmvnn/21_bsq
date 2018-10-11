@@ -3,20 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ggrimes <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: lbellona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/10/08 20:29:45 by ggrimes           #+#    #+#              #
-#    Updated: 2018/10/08 20:33:24 by ggrimes          ###   ########.fr        #
+#    Created: 2018/10/01 18:33:43 by lbellona          #+#    #+#              #
+#    Updated: 2018/10/10 23:42:39 by lbellona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-FLAGS=-Wall -Wextra -Werror
-H=-Iincludes/
-NAME=bsq
 
-all: prog
+SOURCES = *.c
+WWW = -Wall -Wextra -Werror
+PROG = bsq
 
-prog:	
-		gcc $(FLAGS) $(H) -o $(NAME) main.c srcs/*.c
+all: compile
 
-clean:	
-		rm -f $(NAME)
+compile:
+	gcc $(WWW) $(SOURCES) -o $(PROG)
+
+clean:
+	rm -f $(PROG)

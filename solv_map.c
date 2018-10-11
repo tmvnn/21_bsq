@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   solv_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aholger <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lbellona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/23 14:14:55 by aholger           #+#    #+#             */
-/*   Updated: 2018/10/08 18:55:19 by lbellona         ###   ########.fr       */
+/*   Created: 2018/10/10 14:30:44 by lbellona          #+#    #+#             */
+/*   Updated: 2018/10/10 23:44:32 by lbellona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_bsq.h"
 
-void	ft_putchar(char c)
+void	solv_map(int *map, t_mp params)
 {
-	write(1, &c, 1);
+	fill_map(map, &params);
+	print_solv(map, &params);
 }
